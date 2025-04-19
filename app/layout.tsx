@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
-import { Exo_2 } from 'next/font/google';
+import { Montserrat, Exo_2 } from 'next/font/google';
 import './globals.css';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-montserrat',
+});
 
 const exo2 = Exo_2({
   weight: ['400', '700'],
@@ -20,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${exo2.variable} antialiased`}>{children}</body>
+      <body className={`${montserrat.variable} ${exo2.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
