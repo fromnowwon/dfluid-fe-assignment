@@ -6,6 +6,7 @@
   --color-orange: #ff6633;
   --color-green: #00c300;
   --color-blue: #18a0fb;
+  --color-blue-hover: #0d8ae2;
 }
 
 @layer base {

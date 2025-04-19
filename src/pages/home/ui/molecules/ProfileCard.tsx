@@ -30,7 +30,7 @@ export default function ProfileCard({
           <Link
             href={link}
             target="_blank"
-            className="font-bold text-[var(--color-blue)]"
+            className="font-bold text-[var(--color-blue)] hover:text-[var(--color-blue-hover)]"
           >
             LEARN MORE
           </Link>
