@@ -1,4 +1,4 @@
-import SectionTitle from '@/shared/ui/SectionTitle';
+import SectionTitle from '@/pages/home/ui/atoms/SectionTitle';
 import ProfileCard from '../molecules/ProfileCard';
 import { PROFILES_DATA } from '@/shared/data/profiles';
 
