@@ -1,5 +1,6 @@
 import SectionTitle from '@/shared/ui/SectionTitle';
 import ProfileCard from '../molecules/ProfileCard';
+import { PROFILES_DATA } from '@/shared/data/profiles';
 
 export default function ProfileSection() {
   return (
@@ -11,7 +12,9 @@ export default function ProfileSection() {
       </SectionTitle>
 
       <div className="flex justify-center gap-5">
-        <ProfileCard />
+        {PROFILES_DATA.map((profile) => (
+          <ProfileCard key={profile.id} {...profile} />
+        ))}
       </div>
     </section>
   );
