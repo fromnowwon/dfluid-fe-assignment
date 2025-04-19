@@ -15,6 +15,11 @@ const eslintConfig = [
     'next/typescript',
     'plugin:prettier/recommended'
   ),
+  {
+    rules: {
+      'react/no-unescaped-entities': 'off',
+    },
+  },
 ];
 
 export default eslintConfig;
