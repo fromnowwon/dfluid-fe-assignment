@@ -8,6 +8,9 @@
   --color-blue: #18a0fb;
 }
 
-body {
-  font-family: var(--font-exo-2), sans-serif;
+@layer base {
+  body {
+    font-family: var(--font-exo-2), sans-serif;
+    letter-spacing: -0.015em;
+  }
 }
