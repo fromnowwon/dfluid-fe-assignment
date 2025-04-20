@@ -18,14 +18,14 @@ export default function ProfileSection() {
   }, []);
 
   return (
-    <section className="px-20 pt-30 pb-27.5">
+    <section className="px-10 lg:px-20 pt-20 lg:pt-30 pb-20 lg:pb-27.5">
       <SectionTitle>
         Snap photos and share like
         <br />
         never before
       </SectionTitle>
 
-      <div className="flex justify-center gap-5 mt-17.5">
+      <div className="flex flex-col lg:flex-row justify-center gap-10 lg:gap-5 mt-17.5 divide-y divide-gray-300 lg:divide-y-0">
         {shuffledProfiles.map((profile) => (
           <ProfileCard key={profile.id} {...profile} />
         ))}

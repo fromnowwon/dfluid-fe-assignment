@@ -10,7 +10,7 @@ export default function SubscribeSection() {
 
   return (
     <section
-      className="relative flex items-center w-full h-185 px-20 py-38 bg-cover bg-no-repeat bg-center"
+      className="relative flex items-center w-full h-185 px-10 lg:px-20 py-38 bg-cover bg-no-repeat bg-center"
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}
@@ -21,7 +21,7 @@ export default function SubscribeSection() {
         <h3 className="font-bold text-2xl leading-9">
           Sed ut perspiciatis unde omnis
         </h3>
-        <p className="mt-5.75 text-white/80 text-lg leading-7.5">
+        <p className="mt-5.75 text-white/80 text-md lg:text-lg leading-6 lg:leading-7.5">
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected
           humour, or randomised words which don't look even slightly believable.
@@ -39,11 +39,11 @@ export default function SubscribeSection() {
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore.
           </p>
-          <h4 className="mt-23.75 font-exo font-bold">
-            Subscribe to our newsletter
-          </h4>
-          <div className="relative mt-4 w-full flex justify-center">
-            <EmailInput />
+          <div className="mt-10 lg:mt-23.75">
+            <h4 className="font-exo font-bold">Subscribe to our newsletter</h4>
+            <div className="relative mt-4 w-full flex justify-center">
+              <EmailInput />
+            </div>
           </div>
         </div>
       </div>

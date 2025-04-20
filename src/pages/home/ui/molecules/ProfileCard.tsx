@@ -11,7 +11,7 @@ export default function ProfileCard({
   link,
 }: ProfileCardProps) {
   return (
-    <div className="flex flex-col items-start">
+    <div className="flex flex-col items-center lg:items-start pb-5 lg:pb-0">
       <Image
         src={image}
         alt={name}

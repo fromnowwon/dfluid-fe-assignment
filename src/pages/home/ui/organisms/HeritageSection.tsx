@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { HERITAGES_DATA, Region } from '@/shared/data/heritages';
-
 import SectionTitle from '../atoms/SectionTitle';
 import HeritageCard from '../molecules/HeritageCard';
 import RegionFilter from '../molecules/RegionFilter';
@@ -23,11 +22,13 @@ export default function HeritageSection() {
   });
 
   return (
-    <section className="pl-20 pt-30 pb-20">
-      <SectionTitle>Duis tincidunt ut ligula vitae mollis.</SectionTitle>
+    <section className="pt-20 lg:pt-30 pb-20">
+      <SectionTitle className="px-10 lg:px-20">
+        Duis tincidunt ut ligula vitae mollis.
+      </SectionTitle>
 
-      <div className="mt-15">
-        <div className="flex gap-5 items-center">
+      <div className="mt-10 lg:mt-15">
+        <div className="flex flex-col lg:flex-row gap-5 items-center px-10 lg:px-20">
           <RegionFilter
             selectedRegion={selectedRegion}
             setSelectedRegion={setSelectedRegion}
@@ -41,9 +42,9 @@ export default function HeritageSection() {
           />
         </div>
 
-        <div className="mt-17 pr-10 overflow-x-auto">
+        <div className="pl-10 lg:pl-20 mt-17 pr-10 overflow-x-auto">
           {filteredData.length === 0 ? (
-            <div className="w-full h-[415px] flex items-center justify-center text-gray-dark">
+            <div className="w-full h-103.75 flex items-center justify-center text-gray-dark">
               Sorry, no matches were found.
             </div>
           ) : (
