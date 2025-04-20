@@ -5,10 +5,10 @@ import Link from 'next/link';
 type ProfileCardProps = Profile;
 
 export default function ProfileCard({
+  id,
   name,
   image,
   description,
-  link,
 }: ProfileCardProps) {
   return (
     <div className="flex flex-col items-center lg:items-start pb-5 lg:pb-0">
@@ -24,7 +24,7 @@ export default function ProfileCard({
         <p className="mt-6 text-lg leading-7">{description}</p>
         <div className="mt-6">
           <Link
-            href={link}
+            href={`/profiles/${id}`}
             className="font-bold text-blue hover:text-blue-hover transition-colors duration-200"
           >
             LEARN MORE
