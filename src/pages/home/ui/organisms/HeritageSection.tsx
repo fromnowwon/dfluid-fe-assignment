@@ -8,22 +8,22 @@ import HeritageCard from '../molecules/HeritageCard';
 import RegionFilter from '../molecules/RegionFilter';
 
 export default function HeritageSection() {
-  const [selectedFilter, setSelectedFilter] = useState<Region | 'All'>('All');
+  const [selectedRegion, setSelectedRegion] = useState<Region | 'All'>('All');
 
   const filteredData =
-    selectedFilter === 'All'
+    selectedRegion === 'All'
       ? HERITAGES_DATA
-      : HERITAGES_DATA.filter((item) => item.region === selectedFilter);
+      : HERITAGES_DATA.filter((item) => item.region === selectedRegion);
 
   return (
     <section className="pl-20 pt-30 pb-20">
       <SectionTitle>Duis tincidunt ut ligula vitae mollis.</SectionTitle>
 
       <div className="mt-15">
-        <div className="flex items-center">
+        <div className="flex gap-5 items-center">
           <RegionFilter
-            selectedFilter={selectedFilter}
-            setSelectedFilter={setSelectedFilter}
+            selectedRegion={selectedRegion}
+            setSelectedRegion={setSelectedRegion}
           />
         </div>
 
