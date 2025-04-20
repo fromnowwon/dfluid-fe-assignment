@@ -5,6 +5,8 @@ interface IconButtonProps {
   onClick?: () => void;
   alt?: string;
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 export default function IconButton({
@@ -12,11 +14,19 @@ export default function IconButton({
   onClick,
   alt = 'icon',
   className = '',
+  type = 'button',
+  disabled = false,
 }: IconButtonProps) {
   return (
     <button
+      type={type}
       onClick={onClick}
-      className={`absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center justify-center ${className}`}
+      disabled={disabled}
+      className={`absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center justify-center transition-opacity ${
+        disabled
+          ? 'opacity-50 cursor-not-allowed'
+          : 'opacity-100 cursor-pointer'
+      } ${className}`}
     >
       <Image
         src={icon}
