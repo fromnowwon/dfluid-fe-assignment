@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Divider from '@/shared/ui/Divider';
 import EmailInput from '../molecules/EmailInput';
 import { useUnsplashRandom } from '@/shared/api/queries/useUnsplashRandom';
@@ -8,11 +9,24 @@ export default function SubscribeSection() {
   const { data } = useUnsplashRandom('subscribe');
   const backgroundImage = data?.urls?.full || '/assets/images/subscribe_bg.jpg';
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!backgroundImage) return;
+
+    const img = new Image();
+    img.src = backgroundImage;
+    img.onload = () => setIsLoaded(true);
+  }, [backgroundImage]);
+
   return (
     <section
-      className="relative flex items-center w-full h-185 px-10 lg:px-20 py-38 bg-cover bg-no-repeat bg-center"
+      className={`relative flex items-center w-full h-185 px-10 lg:px-20 py-38 bg-cover bg-center transition-opacity duration-700 ${
+        isLoaded ? 'opacity-100' : 'opacity-0'
+      }`}
       style={{
         backgroundImage: `url(${backgroundImage})`,
+        backgroundColor: '#d9d9d9',
       }}
     >
       <div className="absolute inset-0 bg-black/50 z-0"></div>
