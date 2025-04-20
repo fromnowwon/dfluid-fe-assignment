@@ -13,8 +13,6 @@ export default function YearFilter({
   endYear,
   setEndYear,
 }: YearFilterProps) {
-  console.log('Years', startYear, endYear);
-
   const handleClick = (year: number) => {
     // 단일 선택 상태
     if (startYear === endYear) {
