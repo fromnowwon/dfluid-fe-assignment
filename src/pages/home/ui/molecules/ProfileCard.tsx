@@ -1,18 +1,14 @@
+import { Profile } from '@/shared/data/profiles';
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface ProfileCardProps {
-  name: string;
-  image: string;
-  description: string;
-  link?: string;
-}
+type ProfileCardProps = Profile;
 
 export default function ProfileCard({
   name,
   image,
   description,
-  link = '#',
+  link,
 }: ProfileCardProps) {
   return (
     <div className="flex flex-col items-start">
