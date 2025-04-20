@@ -1,9 +1,20 @@
+'use client';
+
 import Divider from '@/shared/ui/Divider';
 import EmailInput from '../molecules/EmailInput';
+import { useUnsplashRandom } from '@/shared/api/queries/useUnsplashRandom';
 
 export default function SubscribeSection() {
+  const { data } = useUnsplashRandom('subscribe');
+  const backgroundImage = data?.urls?.full || '/assets/images/subscribe_bg.jpg';
+
   return (
-    <section className="relative flex items-center w-full h-185 px-20 py-38 bg-[url('/assets/images/subscribe_bg.jpg')] bg-cover bg-no-repeat bg-center">
+    <section
+      className="relative flex items-center w-full h-185 px-20 py-38 bg-cover bg-no-repeat bg-center"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+    >
       <div className="absolute inset-0 bg-black/50 z-0"></div>
 
       <div className="relative z-10 flex flex-col items-center text-center text-white">
