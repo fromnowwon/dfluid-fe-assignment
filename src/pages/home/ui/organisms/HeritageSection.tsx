@@ -6,14 +6,21 @@ import { HERITAGES_DATA, Region } from '@/shared/data/heritages';
 import SectionTitle from '../atoms/SectionTitle';
 import HeritageCard from '../molecules/HeritageCard';
 import RegionFilter from '../molecules/RegionFilter';
+import YearFilter from '../molecules/YearFilter';
 
 export default function HeritageSection() {
   const [selectedRegion, setSelectedRegion] = useState<Region | 'All'>('All');
+  const [startYear, setStartYear] = useState<number>(1000);
+  const [endYear, setEndYear] = useState<number>(2000);
 
-  const filteredData =
-    selectedRegion === 'All'
-      ? HERITAGES_DATA
-      : HERITAGES_DATA.filter((item) => item.region === selectedRegion);
+  const filteredData = HERITAGES_DATA.filter((heritage) => {
+    const matchesRegion =
+      selectedRegion === 'All' || heritage.region === selectedRegion;
+
+    const matchesYear = heritage.year >= startYear && heritage.year <= endYear;
+
+    return matchesRegion && matchesYear;
+  });
 
   return (
     <section className="pl-20 pt-30 pb-20">
@@ -25,9 +32,16 @@ export default function HeritageSection() {
             selectedRegion={selectedRegion}
             setSelectedRegion={setSelectedRegion}
           />
+
+          <YearFilter
+            startYear={startYear}
+            setStartYear={setStartYear}
+            endYear={endYear}
+            setEndYear={setEndYear}
+          />
         </div>
 
-        <div className="mt-17 pr-10 overflow-x-auto scrollbar-thin scrollbar-thumb-sky-700 scrollbar-track-sky-300">
+        <div className="mt-17 pr-10">
           <div className="flex gap-10 w-max">
             {filteredData.map((heritage) => (
               <HeritageCard key={heritage.id} {...heritage} />
