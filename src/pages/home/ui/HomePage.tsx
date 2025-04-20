@@ -1,4 +1,4 @@
-import CardSection from './organisms/CardSection';
+import HeritageSection from './organisms/HeritageSection';
 import ProfileSection from './organisms/ProfileSection';
 import SubscribeSection from './organisms/SubscribeSection';
 
@@ -7,7 +7,7 @@ export default function HomePage() {
     <main>
       <ProfileSection />
       <SubscribeSection />
-      <CardSection />
+      <HeritageSection />
     </main>
   );
 }
