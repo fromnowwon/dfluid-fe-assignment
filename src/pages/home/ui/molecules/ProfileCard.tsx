@@ -25,8 +25,7 @@ export default function ProfileCard({
         <div className="mt-6">
           <Link
             href={link}
-            target="_blank"
-            className="font-bold text-[var(--color-blue)] hover:text-[var(--color-blue-hover)]"
+            className="font-bold text-blue hover:text-blue-hover transition-colors duration-200"
           >
             LEARN MORE
           </Link>
