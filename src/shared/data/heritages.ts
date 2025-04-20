@@ -1,6 +1,15 @@
+export enum Region {
+  Europe = 'Europe',
+  Asia = 'Asia',
+  Africa = 'Africa',
+  America = 'America',
+  Oceania = 'Oceania',
+}
+
 export interface Heritage {
   id: number;
-  location: string;
+  region: Region;
+  country: string;
   name: string;
   year: number;
   image: string;
@@ -10,7 +19,8 @@ export interface Heritage {
 export const HERITAGES_DATA: Heritage[] = [
   {
     id: 1,
-    location: 'Italy',
+    region: Region.Europe,
+    country: 'Italy',
     name: 'Pica',
     year: 1173,
     image: '/assets/images/heritage_a.jpg',
@@ -19,7 +29,8 @@ export const HERITAGES_DATA: Heritage[] = [
   },
   {
     id: 2,
-    location: 'Spain',
+    region: Region.Europe,
+    country: 'Spain',
     name: 'Sagrada Família',
     year: 1882,
     image: '/assets/images/heritage_b.jpg',
@@ -28,16 +39,18 @@ export const HERITAGES_DATA: Heritage[] = [
   },
   {
     id: 3,
-    location: 'US',
+    region: Region.America,
+    country: 'US',
     name: 'Fallingwater',
     year: 1935,
-    image: '/assets/images/heritage_a.jpg',
+    image: '/assets/images/heritage_c.jpg',
     description:
       "Fallingwater is a house designed by the architect Frank Lloyd Wright in 1935. Situated in the Mill Run section of Stewart township, in the Laurel Highlands of southwest Pennsylvania, about 70 miles (110 km) southeast of Pittsburgh in the United States, it is built partly over a waterfall on the Bear Run river. The house was designed to serve as a weekend retreat for Liliane and Edgar J. Kaufmann, the owner of Pittsburgh's Kaufmann's Department Store.",
   },
   {
     id: 4,
-    location: 'Russia',
+    region: Region.Europe,
+    country: 'Russia',
     name: "Saint Basil's Cathedral",
     year: 1555,
     image: '/assets/images/heritage_d.jpg',

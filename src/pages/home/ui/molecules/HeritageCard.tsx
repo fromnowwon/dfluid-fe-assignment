@@ -1,17 +1,11 @@
+import { Heritage } from '@/shared/data/heritages';
 import Image from 'next/image';
 
-interface HeritageCardProps {
-  id: number;
-  location: string;
-  name: string;
-  year: number;
-  image: string;
-  description: string;
-}
+type HeritageCardProps = Heritage;
 
 export default function HeritageCard({
   id,
-  location,
+  country,
   name,
   year,
   image,
@@ -24,7 +18,7 @@ export default function HeritageCard({
     >
       <div className="flex justify-between items-center pl-[3px]">
         <h3 className="font-bold leading-[100%]">
-          {location}, {name}
+          {country}, {name}
         </h3>
         <p>{year}</p>
       </div>
