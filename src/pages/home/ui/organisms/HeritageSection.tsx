@@ -41,12 +41,18 @@ export default function HeritageSection() {
           />
         </div>
 
-        <div className="mt-17 pr-10">
-          <div className="flex gap-10 w-max">
-            {filteredData.map((heritage) => (
-              <HeritageCard key={heritage.id} {...heritage} />
-            ))}
-          </div>
+        <div className="mt-17 pr-10 overflow-x-auto">
+          {filteredData.length === 0 ? (
+            <div className="w-full h-[415px] flex items-center justify-center text-gray-dark">
+              Sorry, no matches were found.
+            </div>
+          ) : (
+            <div className="flex gap-10 w-max">
+              {filteredData.map((heritage) => (
+                <HeritageCard key={heritage.id} {...heritage} />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>
