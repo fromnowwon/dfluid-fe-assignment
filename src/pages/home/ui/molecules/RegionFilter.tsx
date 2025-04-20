@@ -24,7 +24,7 @@ export default function RegionFilter({
           key={region}
           onClick={() => setSelectedRegion(region)}
           className={`h-10 font-exo px-5 rounded-full leading-[100%] cursor-pointer ${
-            selectedRegion === region ? 'bg-black text-white' : 'text-gray-700'
+            selectedRegion === region ? 'bg-black text-white' : 'text-black'
           }`}
         >
           {region}
