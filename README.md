@@ -57,6 +57,16 @@ yarn install
 yarn run dev
 ```
 
+### 🛠️ .env 관련 안내
+
+Unsplash API 관련 에러가 발생한다면, .env 파일이 누락되었을 수 있습니다.
+루트 경로에 .env 파일을 생성하신 후, 아래 값을 입력해주세요.
+
+```
+NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=RfZSbn_rdvEPrnhslq8HRwmCwyayZg3DBo_LDcXXaTM
+NEXT_PUBLIC_UNSPLASH_SECRET_KEY=oBOMkDmHrJicTHkT1RUBrpa4ZbL7f8MzrcOU2HTPRZ0
+```
+
 ## 🚀 Deployment
 
 본 프로젝트는 Vercel을 통해 자동 배포되었습니다.
