@@ -65,7 +65,7 @@ export default function YearFilter({
         <div key={year} className="relative">
           <button
             onClick={() => handleClick(year)}
-            className={`z-10 relative flex items-center justify-center w-10 h-10 font-exo px-5 text-sm rounded-full leading-[100%] cursor-pointer ${
+            className={`z-5 relative flex items-center justify-center w-10 h-10 font-exo px-5 text-sm rounded-full leading-[100%] cursor-pointer ${
               isInRange(year) ? 'bg-black' : 'bg-gray-medium'
             } text-white`}
           >

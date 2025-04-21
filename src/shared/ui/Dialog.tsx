@@ -31,34 +31,52 @@ export default function Dialog({
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [open, onClose]);
 
-  const formatDescription = (text: string) => {
-    return text.split('\n').join('<br />');
+  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
   };
 
   if (!open) return null;
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="dialog-title"
+      aria-describedby="dialog-desc"
       className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center"
-      onClick={onClose}
+      onClick={handleOverlayClick}
     >
       <div
         className="bg-white rounded-xl shadow-lg w-full max-w-sm p-6 text-center"
         onClick={(e) => e.stopPropagation()}
       >
-        {title && <h2 className="text-lg font-bold mb-2">{title}</h2>}
+        {title && (
+          <h2 id="dialog-title" className="text-lg font-bold mb-2">
+            {title}
+          </h2>
+        )}
 
         {description && (
-          <p
-            className="text-sm text-gray-700 mb-4"
-            dangerouslySetInnerHTML={{ __html: formatDescription(description) }}
-          />
+          <div id="dialog-desc" className="text-sm text-gray-700 mb-4">
+            {description.split('\n').map((line, i) => (
+              <p
+                id="dialog-desc"
+                key={i}
+                className="text-sm text-gray-700 mb-4"
+              >
+                {line}
+              </p>
+            ))}
+          </div>
         )}
 
         <div className="flex justify-center gap-2">
           {actions.map((action, index) => (
             <button
               key={index}
+              type="button"
               onClick={action.onClick}
               className={`px-4 py-2 rounded cursor-pointer ${
                 action.variant === 'secondary'

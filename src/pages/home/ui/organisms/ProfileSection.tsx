@@ -14,11 +14,15 @@ export default function ProfileSection() {
   const [shuffledProfiles, setShuffledProfiles] = useState<Profile[]>([]);
 
   useEffect(() => {
-    setShuffledProfiles(shuffleArray(PROFILES_DATA));
+    const shuffled = shuffleArray(PROFILES_DATA);
+    setShuffledProfiles(shuffled);
   }, []);
 
   return (
-    <section className="px-10 lg:px-20 pt-20 lg:pt-30 pb-20 lg:pb-27.5">
+    <section
+      aria-label="Profile Section"
+      className="px-10 lg:px-20 pt-20 lg:pt-30 pb-20 lg:pb-27.5"
+    >
       <SectionTitle>
         Snap photos and share like
         <br />

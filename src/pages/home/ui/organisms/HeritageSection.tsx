@@ -22,7 +22,7 @@ export default function HeritageSection() {
   });
 
   return (
-    <section className="pt-20 lg:pt-30 pb-20">
+    <section aria-label="Heritage Section" className="pt-20 lg:pt-30 pb-20">
       <SectionTitle className="px-10 lg:px-20">
         Duis tincidunt ut ligula vitae mollis.
       </SectionTitle>

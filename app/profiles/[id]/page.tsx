@@ -27,7 +27,7 @@ export default async function ProfileDetailPage({
           height={150}
           className="rounded-full"
         />
-        <h1 className="mt-6 text-3xl font-bold">{profile.name}</h1>
+        <h2 className="mt-6 text-3xl font-bold">{profile.name}</h2>
         <p className="mt-3 text-gray-600">{profile.bio}</p>
         <p className="mt-6 text-lg text-gray-700">{profile.description}</p>
 

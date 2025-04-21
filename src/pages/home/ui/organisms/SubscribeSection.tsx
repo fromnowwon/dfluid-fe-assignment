@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Divider from '@/shared/ui/Divider';
 import EmailInput from '../molecules/EmailInput';
 import { useUnsplashRandom } from '@/shared/api/queries/useUnsplashRandom';
@@ -10,17 +10,22 @@ export default function SubscribeSection() {
   const backgroundImage = data?.urls?.full || '/assets/images/subscribe_bg.jpg';
 
   const [isLoaded, setIsLoaded] = useState(false);
+  const hasLoadedOnce = useRef(false);
 
   useEffect(() => {
-    if (!backgroundImage) return;
+    if (!backgroundImage || hasLoadedOnce.current) return;
 
     const img = new Image();
     img.src = backgroundImage;
-    img.onload = () => setIsLoaded(true);
+    img.onload = () => {
+      setIsLoaded(true);
+      hasLoadedOnce.current = true;
+    };
   }, [backgroundImage]);
 
   return (
     <section
+      aria-label="Subscribe Section"
       className={`relative flex items-center w-full h-185 px-10 lg:px-20 py-38 bg-cover bg-center transition-opacity duration-700 ${
         isLoaded ? 'opacity-100' : 'opacity-0'
       }`}
