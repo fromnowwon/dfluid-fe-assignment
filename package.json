@@ -20,6 +20,7 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.4",
     "@tanstack/eslint-plugin-query": "^5.73.3",
+    "@tanstack/react-query-devtools": "^5.74.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
